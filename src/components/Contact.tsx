@@ -8,7 +8,7 @@ export function Contact() {
     fields,
     status,
     errorMessage,
-    firebaseEnabled,
+    databaseEnabled,
     updateField,
     submit,
   } = useContactForm();
@@ -95,7 +95,7 @@ export function Contact() {
               noValidate
             >
               <h3 className="text-lg font-semibold text-mew-blue dark:text-blue-400">Send an Inquiry</h3>
-              {!firebaseEnabled && (
+              {!databaseEnabled && (
                 <p className="mt-2 text-xs text-slate-500 dark:text-slate-400">
                   For fastest response, use WhatsApp — we reply directly.
                 </p>
@@ -160,7 +160,7 @@ export function Contact() {
                 >
                   <span aria-hidden="true">✓</span>
                   Thank you — we received your inquiry
-                  {firebaseEnabled ? ' and will follow up soon' : ''}.
+                  {databaseEnabled ? ' and will follow up soon' : ''}.
                 </p>
               )}
               {status === 'error' && errorMessage && (

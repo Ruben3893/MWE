@@ -1,5 +1,5 @@
 import { useCallback, useState, type FormEvent } from 'react';
-import { isFirebaseEnabled } from '../config/firebase';
+import { isSupabaseEnabled } from '../config/supabase';
 
 export type ContactFormFields = {
   name: string;
@@ -15,22 +15,25 @@ const initialFields: ContactFormFields = {
   message: '',
 };
 
-async function logInquiryToFirebase(payload: {
+async function logInquiryToSupabase(payload: {
   name: string;
   phone: string;
   message: string;
 }) {
-  const { addDoc, collection, serverTimestamp } = await import('firebase/firestore');
-  const { getFirebaseDb } = await import('../config/firebase');
-  const db = getFirebaseDb();
-  if (!db) {
-    throw new Error('Firebase unavailable');
+  const { supabase } = await import('../config/supabase');
+  
+  const { error } = await supabase.from('inquiries').insert([
+    {
+      name: payload.name,
+      phone: payload.phone,
+      message: payload.message,
+      source: 'website',
+    },
+  ]);
+
+  if (error) {
+    throw error;
   }
-  await addDoc(collection(db, 'inquiries'), {
-    ...payload,
-    createdAt: serverTimestamp(),
-    source: 'website',
-  });
 }
 
 export function useContactForm() {
@@ -68,17 +71,19 @@ export function useContactForm() {
       return;
     }
 
-    if (!isFirebaseEnabled()) {
+    if (!isSupabaseEnabled()) {
+      // Fallback state if database credentials aren't present
       setStatus('success');
       setFields(initialFields);
       return;
     }
 
     try {
-      await logInquiryToFirebase(payload);
+      await logInquiryToSupabase(payload);
       setStatus('success');
       setFields(initialFields);
-    } catch {
+    } catch (err: any) {
+      console.error('Supabase save error:', err);
       setStatus('error');
       setErrorMessage('Could not save your inquiry. Please contact us on WhatsApp or phone.');
     }
@@ -88,7 +93,7 @@ export function useContactForm() {
     fields,
     status,
     errorMessage,
-    firebaseEnabled: isFirebaseEnabled(),
+    databaseEnabled: isSupabaseEnabled(),
     updateField,
     resetForm,
     submit,
