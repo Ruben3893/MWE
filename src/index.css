@@ -5,34 +5,34 @@
 @tailwind utilities;
 
 :root {
-  --color-bg: #ffffff;
-  --color-on-bg: #000000;
-  --color-surf: #ffffff;
-  --color-surf-low: #f9f9f9;
-  --color-surf-lowest: #f5f5f5;
-  --color-on-surf: #000000;
-  --color-primary: #000000;
-  --color-primary-container: #000000;
+  --color-bg: #fbf9f6;          /* Soft warm linen white */
+  --color-on-bg: #281e1a;       /* Dark earthy charcoal */
+  --color-surf: #ffffff;        /* Pure white cards */
+  --color-surf-low: #f5ede5;    /* Soft warm sand */
+  --color-surf-lowest: #eedfcb;
+  --color-on-surf: #281e1a;
+  --color-primary: #d87d56;     /* Deep terracotta clay */
+  --color-primary-container: #d87d56;
   --color-on-primary: #ffffff;
-  --color-outline: #000000;
-  --color-outline-variant: #e5e5e5; /* Very clean thin light-gray outline */
-  --text-color-primary: #000000;
+  --color-outline: #d87d56;
+  --color-outline-variant: #e6dcd3; /* Warm cream outline border */
+  --text-color-primary: #d87d56;
 }
 
 .dark,
 :root.dark {
-  --color-bg: #000000;
-  --color-on-bg: #ffffff;
-  --color-surf: #0a0a0a;
-  --color-surf-low: #121212;
-  --color-surf-lowest: #171717;
-  --color-on-surf: #ffffff;
-  --color-primary: #ffffff;
-  --color-primary-container: #ffffff;
-  --color-on-primary: #000000;
-  --color-outline: #ffffff;
-  --color-outline-variant: #262626; /* Sleek dark-gray industrial border */
-  --text-color-primary: #ffffff;
+  --color-bg: #1c1512;          /* Deep warm earthy terracotta-charcoal */
+  --color-on-bg: #fcf9f6;       /* Warm linen cream text */
+  --color-surf: #281e1a;        /* Warm clay surface */
+  --color-surf-low: #221915;
+  --color-surf-lowest: #17100d;
+  --color-on-surf: #fcf9f6;
+  --color-primary: #ffab91;     /* Warm terracotta coral */
+  --color-primary-container: #d87d56; /* Deep terracotta clay */
+  --color-on-primary: #1c1512;  /* Deep dark text contrast */
+  --color-outline: #ffab91;
+  --color-outline-variant: #483630; /* Clay outline border */
+  --text-color-primary: #ffab91;
 }
 
 @layer base {
