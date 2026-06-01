@@ -16,7 +16,7 @@ export function Contact() {
   return (
     <section
       id="contact"
-      className="scroll-mt-28 border-y border-white/10 bg-ind-surf-low py-16 transition-colors duration-200 sm:py-20"
+      className="scroll-mt-28 border-y border-ind-outline-variant bg-ind-surf-low py-16 transition-colors duration-200 sm:py-20"
       aria-labelledby="contact-heading"
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
@@ -80,7 +80,7 @@ export function Contact() {
                 <WhatsAppButton>Inquire Now</WhatsAppButton>
                 <a
                   href={COMPANY.phoneTel}
-                  className="inline-flex items-center justify-center gap-2 rounded border border-white/25 bg-transparent px-5 py-2.5 text-sm font-semibold text-ind-on-surface transition-all duration-200 hover:bg-white/5"
+                  className="inline-flex items-center justify-center gap-2 rounded border border-ind-outline-variant bg-transparent px-5 py-2.5 text-sm font-semibold text-ind-on-surface transition-all duration-200 hover:bg-ind-surf-low"
                 >
                   Call Now
                 </a>
@@ -91,7 +91,7 @@ export function Contact() {
           <Reveal delayMs={150}>
             <form
               onSubmit={submit}
-              className="rounded border border-white/10 bg-ind-surf p-6 transition-all duration-200 sm:p-8"
+              className="rounded border border-ind-outline-variant bg-ind-surf p-6 transition-all duration-200 sm:p-8"
               noValidate
             >
               <h3 className="font-sans text-lg font-bold text-ind-primary">Send an Inquiry</h3>
@@ -155,7 +155,7 @@ export function Contact() {
 
               {status === 'success' && (
                 <p
-                  className="mt-4 flex items-center gap-2 rounded border border-white/10 bg-white/5 px-3 py-2 font-mono text-[10px] uppercase tracking-wider text-ind-primary"
+                  className="mt-4 flex items-center gap-2 rounded border border-ind-outline-variant bg-white/5 px-3 py-2 font-mono text-[10px] uppercase tracking-wider text-ind-primary"
                   role="status"
                 >
                   <span aria-hidden="true" className="text-ind-primary-container">✓</span>
@@ -164,7 +164,7 @@ export function Contact() {
                 </p>
               )}
               {status === 'error' && errorMessage && (
-                <p className="mt-4 rounded border border-white/10 bg-red-950/25 px-3 py-2 font-mono text-[10px] uppercase tracking-wider text-ind-primary-container" role="alert">
+                <p className="mt-4 rounded border border-ind-outline-variant bg-red-950/25 px-3 py-2 font-mono text-[10px] uppercase tracking-wider text-ind-primary-container" role="alert">
                   {errorMessage}
                 </p>
               )}

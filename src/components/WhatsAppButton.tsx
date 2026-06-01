@@ -15,7 +15,7 @@ const variants = {
   primary:
     'bg-ind-primary-container text-white border border-white/20 hover:bg-[#e66000] focus-visible:outline-ind-primary-container',
   secondary:
-    'border border-white/25 text-ind-on-surface hover:bg-white/5 focus-visible:outline-white bg-transparent',
+    'border border-ind-outline-variant text-ind-on-surface hover:bg-ind-surf-low focus-visible:outline-ind-primary bg-transparent',
 };
 
 function WhatsAppIcon({ className = 'h-4 w-4' }: { className?: string }) {

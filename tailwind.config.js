@@ -6,20 +6,20 @@ export default {
     extend: {
       colors: {
         ind: {
-          bg: '#0c141a',
-          surf: '#192127',
-          'surf-low': '#151c22',
-          'surf-lowest': '#070f15',
-          primary: '#ffb693',
-          'primary-container': '#ff6b00',
-          'on-primary': '#561f00',
-          'on-surface': '#dbe3ec',
-          outline: '#a98a7d',
-          'outline-variant': '#5a4136',
+          bg: 'var(--color-bg)',
+          surf: 'var(--color-surf)',
+          'surf-low': 'var(--color-surf-low)',
+          'surf-lowest': 'var(--color-surf-lowest)',
+          primary: 'var(--color-primary)',
+          'primary-container': 'var(--color-primary-container)',
+          'on-primary': 'var(--color-on-primary)',
+          'on-surface': 'var(--color-on-surf)',
+          outline: 'var(--color-outline)',
+          'outline-variant': 'var(--color-outline-variant)',
         },
         mew: {
-          orange: '#ff6b00', // Map to high-visibility Safety Orange
-          blue: '#ffb693',   // Map to high-visibility Safety Coral
+          orange: 'var(--color-primary-container)', // Map to dynamic Safety Orange
+          blue: 'var(--color-primary)',             // Map to dynamic Safety Coral
         },
       },
       fontFamily: {
@@ -44,7 +44,7 @@ export default {
       },
       boxShadow: {
         none: 'none',
-        glow: '0 0 16px rgba(255, 107, 0, 0.2)', // Low-contrast safety outline glow
+        glow: '0 0 16px rgba(255, 107, 0, 0.2)', // Dynamic safety outline glow
         'glow-blue': '0 0 16px rgba(255, 182, 147, 0.12)',
         card: 'none',
         'card-hover': 'none',

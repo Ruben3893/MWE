@@ -4,6 +4,35 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --color-bg: #ffffff;
+  --color-on-bg: #0c141a;
+  --color-surf: #ffffff;
+  --color-surf-low: #f4f7fb;
+  --color-surf-lowest: #f1f5f9;
+  --color-on-surf: #0c141a;
+  --color-primary: #ff6b00;
+  --color-primary-container: #ff6b00;
+  --color-on-primary: #ffffff;
+  --color-outline: #ff6b00;
+  --color-outline-variant: #e2e8f0; /* Light border */
+}
+
+.dark,
+:root.dark {
+  --color-bg: #0c141a;
+  --color-on-bg: #dbe3ec;
+  --color-surf: #192127;
+  --color-surf-low: #151c22;
+  --color-surf-lowest: #070f15;
+  --color-on-surf: #dbe3ec;
+  --color-primary: #ffb693;
+  --color-primary-container: #ff6b00;
+  --color-on-primary: #561f00;
+  --color-outline: #a98a7d;
+  --color-outline-variant: #5a4136; /* Dark industrial border */
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -42,16 +71,16 @@
 @layer components {
   /* Enforces the modern industrial technical blueprint grid background */
   .hero-mesh {
-    background-color: #0c141a;
+    background-color: var(--color-bg);
     background-image:
-      linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+      linear-gradient(rgba(170, 170, 170, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(170, 170, 170, 0.04) 1px, transparent 1px);
     background-size: 24px 24px;
     transition: background-color 0.3s ease;
   }
 
   .dark .hero-mesh {
-    background-color: #0c141a;
+    background-color: var(--color-bg);
     background-image:
       linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
       linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
@@ -66,14 +95,14 @@
     @apply translate-y-0 opacity-100;
   }
 
-  /* Architectural, shadowless service card with flat outline and left-border focus */
+  /* Architectural, shadowless service card with dynamic border and left-border focus */
   .service-card {
-    @apply relative overflow-hidden rounded bg-ind-surf p-5 transition-all duration-300 border border-white/10;
+    @apply relative overflow-hidden rounded bg-ind-surf p-5 transition-all duration-300 border border-ind-outline-variant;
     box-shadow: none;
   }
 
   .dark .service-card {
-    @apply border-white/10 bg-ind-surf;
+    @apply border-ind-outline-variant bg-ind-surf;
     box-shadow: none;
   }
 
@@ -83,12 +112,12 @@
   }
 
   .service-card:hover {
-    @apply -translate-y-0.5 border-ind-outline/30 bg-ind-surf-low;
+    @apply -translate-y-0.5 border-ind-outline bg-ind-surf-low;
     box-shadow: none;
   }
 
   .dark .service-card:hover {
-    @apply border-ind-outline/30 bg-ind-surf-low;
+    @apply border-ind-outline bg-ind-surf-low;
     box-shadow: none;
   }
 
@@ -120,21 +149,21 @@
 
   /* Inset industrial input field with left-border safety highlight on focus */
   .input-field {
-    @apply mt-1 w-full rounded border border-white/10 bg-ind-surf-lowest px-3 py-2.5 text-sm transition-all duration-200 placeholder:text-slate-500 focus:outline-none text-ind-on-surface focus:border-l-4 focus:border-l-ind-primary-container focus:border-white/20;
+    @apply mt-1 w-full rounded border border-ind-outline-variant bg-ind-surf-lowest px-3 py-2.5 text-sm transition-all duration-200 placeholder:text-slate-500 focus:outline-none text-ind-on-surface focus:border-l-4 focus:border-l-ind-primary-container focus:border-ind-outline-variant;
   }
 
   .dark .input-field {
-    @apply border-white/10 bg-ind-surf-lowest text-ind-on-surface placeholder:text-slate-500 focus:border-l-4 focus:border-l-ind-primary-container focus:border-white/20;
+    @apply border-ind-outline-variant bg-ind-surf-lowest text-ind-on-surface placeholder:text-slate-500 focus:border-l-4 focus:border-l-ind-primary-container focus:border-ind-outline-variant;
   }
 
   /* Structural low-contrast outline contact tile */
   .contact-tile {
-    @apply flex items-center gap-3 rounded border border-white/10 bg-ind-surf p-4 transition-all duration-300 hover:border-ind-outline/30;
+    @apply flex items-center gap-3 rounded border border-ind-outline-variant bg-ind-surf p-4 transition-all duration-300 hover:border-ind-outline;
     box-shadow: none;
   }
 
   .dark .contact-tile {
-    @apply border-white/10 bg-ind-surf hover:border-ind-outline/30;
+    @apply border-ind-outline-variant bg-ind-surf hover:border-ind-outline;
     box-shadow: none;
   }
 
