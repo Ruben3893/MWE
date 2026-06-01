@@ -25,12 +25,12 @@ export function Header() {
     <button
       type="button"
       onClick={toggleTheme}
-      className="flex h-10 w-10 items-center justify-center rounded-lg border border-slate-300 p-2 text-mew-blue transition-all duration-300 hover:border-mew-blue hover:bg-mew-blue/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-mew-blue dark:border-slate-700 dark:text-slate-300 dark:hover:border-slate-500 dark:hover:bg-slate-800"
+      className="flex h-10 w-10 items-center justify-center rounded border border-white/10 p-2 text-ind-primary transition-all duration-200 hover:border-ind-outline/50 hover:bg-white/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ind-primary"
       aria-label={theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'}
     >
       {theme === 'dark' ? (
         <svg
-          className="h-5 w-5 rotate-0 transition-transform duration-500"
+          className="h-5 w-5 transition-transform duration-300"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -45,7 +45,7 @@ export function Header() {
         </svg>
       ) : (
         <svg
-          className="h-5 w-5 rotate-0 transition-transform duration-500"
+          className="h-5 w-5 transition-transform duration-300"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -63,7 +63,7 @@ export function Header() {
   );
 
   return (
-    <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/90 shadow-sm backdrop-blur-md transition-all duration-300 dark:border-slate-800/80 dark:bg-slate-950/90 dark:shadow-md">
+    <header className="sticky top-0 z-50 border-b border-white/10 bg-ind-bg/95 backdrop-blur-md transition-all duration-200">
       <TopContactBar />
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
         <a
@@ -76,15 +76,15 @@ export function Header() {
         >
           <MewLogo className="h-11 w-11 transition-transform duration-300 group-hover:scale-105" />
           <div className="min-w-0">
-            <p className="truncate text-sm font-bold text-mew-orange transition-colors group-hover:text-[#c94f1f] sm:text-base">
+            <p className="truncate text-sm font-bold text-ind-primary-container transition-colors group-hover:text-ind-primary sm:text-base">
               {COMPANY.name}
             </p>
-            <p className="truncate text-xs text-mew-blue dark:text-blue-400">{COMPANY.shortName}</p>
+            <p className="truncate font-mono text-[10px] uppercase tracking-wider text-ind-primary/75">{COMPANY.shortName}</p>
           </div>
         </a>
 
         {/* Desktop Navigation */}
-        <nav className="hidden items-center gap-4 md:flex" aria-label="Primary">
+        <nav className="hidden items-center gap-6 md:flex" aria-label="Primary">
           {NAV_SECTIONS.map((section) => (
             <button
               key={section.id}
@@ -104,7 +104,7 @@ export function Header() {
           {themeToggleBtn}
           <button
             type="button"
-            className="inline-flex items-center justify-center rounded-lg border border-slate-300 p-2 text-mew-blue transition-colors hover:border-mew-blue hover:bg-mew-blue/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-mew-blue dark:border-slate-700 dark:text-slate-300 dark:hover:bg-slate-800"
+            className="inline-flex items-center justify-center rounded border border-white/10 p-2 text-ind-primary transition-colors hover:border-ind-primary hover:bg-white/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ind-primary"
             aria-expanded={menuOpen}
             aria-controls="mobile-nav"
             aria-label={menuOpen ? 'Close menu' : 'Open menu'}
@@ -130,7 +130,7 @@ export function Header() {
       {/* Mobile Navigation Panel */}
       <nav
         id="mobile-nav"
-        className={`overflow-hidden border-t border-slate-200 bg-white transition-all duration-300 dark:border-slate-800 dark:bg-slate-950 md:hidden ${
+        className={`overflow-hidden border-t border-white/10 bg-ind-bg transition-all duration-200 md:hidden ${
           menuOpen ? 'max-h-80 opacity-100' : 'max-h-0 opacity-0'
         }`}
         aria-label="Mobile"
@@ -142,10 +142,10 @@ export function Header() {
               <button
                 type="button"
                 onClick={() => scrollToSection(section.id)}
-                className={`w-full rounded-lg px-3 py-2.5 text-left text-sm font-medium transition-colors ${
+                className={`w-full rounded px-3 py-2.5 text-left text-sm font-medium transition-colors ${
                   activeSection === section.id
-                    ? 'bg-mew-orange/10 text-mew-orange dark:bg-mew-orange/20'
-                    : 'text-mew-blue hover:bg-slate-50 dark:text-slate-300 dark:hover:bg-slate-900'
+                    ? 'bg-ind-primary-container/10 text-ind-primary-container'
+                    : 'text-ind-on-surface hover:bg-ind-surf-low'
                 }`}
               >
                 {section.label}

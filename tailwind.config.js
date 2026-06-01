@@ -5,27 +5,49 @@ export default {
   theme: {
     extend: {
       colors: {
+        ind: {
+          bg: '#0c141a',
+          surf: '#192127',
+          'surf-low': '#151c22',
+          'surf-lowest': '#070f15',
+          primary: '#ffb693',
+          'primary-container': '#ff6b00',
+          'on-primary': '#561f00',
+          'on-surface': '#dbe3ec',
+          outline: '#a98a7d',
+          'outline-variant': '#5a4136',
+        },
         mew: {
-          orange: '#E45D25',
-          blue: '#0070BB',
+          orange: '#ff6b00', // Map to high-visibility Safety Orange
+          blue: '#ffb693',   // Map to high-visibility Safety Coral
         },
       },
       fontFamily: {
         sans: [
+          '"IBM Plex Sans"',
           'system-ui',
           '-apple-system',
-          'Segoe UI',
-          'Roboto',
-          'Helvetica Neue',
-          'Arial',
           'sans-serif',
         ],
+        mono: [
+          '"JetBrains Mono"',
+          'monospace',
+        ],
+      },
+      borderRadius: {
+        sm: '2px',
+        DEFAULT: '4px',
+        md: '6px',
+        lg: '8px',
+        xl: '12px',
+        full: '9999px',
       },
       boxShadow: {
-        glow: '0 0 24px rgba(228, 93, 37, 0.35)',
-        'glow-blue': '0 0 24px rgba(0, 112, 187, 0.25)',
-        card: '0 4px 24px rgba(0, 0, 0, 0.08)',
-        'card-hover': '0 12px 40px rgba(0, 112, 187, 0.15)',
+        none: 'none',
+        glow: '0 0 16px rgba(255, 107, 0, 0.2)', // Low-contrast safety outline glow
+        'glow-blue': '0 0 16px rgba(255, 182, 147, 0.12)',
+        card: 'none',
+        'card-hover': 'none',
       },
       animation: {
         'fade-up': 'fadeUp 0.7s ease-out forwards',

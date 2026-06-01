@@ -13,53 +13,44 @@ export function Hero() {
   return (
     <section
       id="top"
-      className="hero-mesh relative min-h-[min(520px,85vh)] overflow-hidden border-b border-slate-200 transition-colors duration-300 dark:border-slate-800"
+      className="hero-mesh relative min-h-[min(520px,85vh)] overflow-hidden border-b border-white/10 transition-colors duration-200"
       aria-labelledby="hero-heading"
     >
-      <div
-        className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-mew-orange/10 blur-3xl dark:bg-mew-orange/5"
-        aria-hidden
-      />
-      <div
-        className="pointer-events-none absolute -bottom-16 -left-16 h-56 w-56 rounded-full bg-mew-blue/10 blur-3xl dark:bg-mew-blue/5"
-        aria-hidden
-      />
-
       <div className="relative mx-auto flex max-w-6xl flex-col justify-center px-4 py-10 sm:px-6 sm:py-14 lg:py-16">
         <div className="grid items-center gap-10 lg:grid-cols-[1fr_340px] lg:gap-12">
           <div className="text-center lg:text-left">
-            <p className="inline-flex items-center gap-2 rounded-full border border-mew-blue/20 bg-white/90 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-mew-blue shadow-sm dark:border-mew-blue/30 dark:bg-slate-900/90 dark:text-blue-400">
-              <span className="h-2 w-2 rounded-full bg-mew-orange" />
+            <p className="inline-flex items-center gap-2 rounded border border-white/10 bg-ind-surf px-3 py-1 font-mono text-[10px] uppercase tracking-wider text-ind-primary">
+              <span className="h-1.5 w-1.5 rounded-full bg-ind-primary-container" />
               Est. fabricators · Bangalore
             </p>
 
             <h1
               id="hero-heading"
-              className="mt-4 text-3xl font-extrabold leading-tight text-mew-orange sm:text-4xl lg:text-[2.75rem] lg:leading-tight"
+              className="mt-4 font-sans text-3xl font-bold leading-tight text-ind-primary-container sm:text-4xl lg:text-[2.75rem] lg:leading-tight"
             >
               {COMPANY.name}
             </h1>
 
-            <p className="mt-2 text-lg font-semibold text-mew-blue dark:text-blue-400">
+            <p className="mt-2 text-lg font-semibold text-ind-primary">
               Quality metalwork for every project
             </p>
 
-            <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-slate-600 dark:text-slate-300 lg:mx-0">
+            <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-ind-on-surface/90 lg:mx-0">
               Manufacturers of trusses, rolling shutters, gates, window grills, doors,
               sheet metal works, and aluminum partitions — built to spec and delivered
               across Bangalore.
             </p>
 
-            <p className="mt-3 text-sm text-slate-600 dark:text-slate-350">
-              <span className="font-semibold text-mew-blue dark:text-blue-400">Proprietor:</span>{' '}
-              {COMPANY.proprietor}
+            <p className="mt-3 font-sans text-sm text-ind-on-surface/85">
+              <span className="font-semibold text-ind-primary">Proprietor:</span>{' '}
+              <span className="text-ind-on-surface">{COMPANY.proprietor}</span>
             </p>
 
             <ul className="mt-5 flex flex-wrap justify-center gap-2 lg:justify-start">
               {HIGHLIGHTS.map((item) => (
                 <li
                   key={item}
-                  className="rounded-full bg-white/90 px-3 py-1 text-xs font-medium text-mew-blue shadow-sm ring-1 ring-mew-blue/15 dark:bg-slate-900/90 dark:text-blue-300 dark:ring-mew-blue/30"
+                  className="rounded border border-white/10 bg-ind-surf-low px-3 py-1 font-mono text-[10px] uppercase tracking-wider text-ind-primary"
                 >
                   {item}
                 </li>
@@ -70,7 +61,7 @@ export function Hero() {
               <WhatsAppButton>Contact Us</WhatsAppButton>
               <a
                 href={COMPANY.phoneTel}
-                className="group inline-flex w-full items-center justify-center gap-2 rounded-lg border-2 border-mew-blue px-5 py-2.5 text-sm font-semibold text-mew-blue transition-all duration-300 hover:bg-mew-blue hover:text-white dark:border-mew-blue dark:text-blue-400 dark:hover:bg-mew-blue dark:hover:text-white sm:w-auto"
+                className="group inline-flex w-full items-center justify-center gap-2 rounded border border-white/20 px-5 py-2.5 text-sm font-semibold text-ind-on-surface transition-all duration-200 hover:bg-white/5 sm:w-auto"
               >
                 <svg
                   className="h-4 w-4"
@@ -91,42 +82,43 @@ export function Hero() {
             </div>
           </div>
 
+          {/* Shop Specification Aside Sheet */}
           <aside
-            className="mx-auto w-full max-w-sm rounded-2xl border border-white/80 bg-white/90 p-6 shadow-[0_8px_32px_rgba(0,112,187,0.12)] backdrop-blur-sm transition-all duration-300 dark:border-slate-800/80 dark:bg-slate-900/85 dark:shadow-[0_8px_32px_rgba(0,0,0,0.3)] lg:mx-0 lg:max-w-none"
+            className="mx-auto w-full max-w-sm rounded border border-white/10 bg-ind-surf p-6 transition-all duration-200 lg:mx-0 lg:max-w-none"
             aria-label="Company overview"
           >
-            <div className="flex items-center gap-4 border-b border-slate-100 pb-4 dark:border-slate-800">
-              <MewLogo className="h-20 w-20 shrink-0" animated />
+            <div className="flex items-center gap-4 border-b border-white/10 pb-4">
+              <MewLogo className="h-16 w-16 shrink-0" animated />
               <div>
-                <p className="text-xs font-bold uppercase tracking-wider text-mew-orange">
+                <p className="font-mono text-[10px] font-bold uppercase tracking-wider text-ind-primary-container">
                   {COMPANY.shortName}
                 </p>
-                <p className="text-sm font-semibold text-mew-blue dark:text-blue-400">Since Bangalore</p>
-                <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">Trusted local fabricators</p>
+                <p className="text-sm font-semibold text-ind-primary">Since Bangalore</p>
+                <p className="mt-1 font-mono text-[10px] uppercase text-ind-on-surface/60">Trusted local fabricators</p>
               </div>
             </div>
 
-            <p className="mt-4 text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-450">
+            <p className="mt-4 font-mono text-[10px] font-semibold uppercase tracking-wider text-ind-on-surface/50">
               We specialize in
             </p>
             <ul className="mt-2 space-y-2">
               {SERVICES.slice(0, 4).map((service) => (
                 <li
                   key={service.id}
-                  className="flex items-center gap-2 text-sm font-medium text-mew-blue dark:text-blue-300"
+                  className="flex items-center gap-2 font-sans text-sm font-medium text-ind-on-surface/90"
                 >
-                  <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-mew-orange" />
+                  <span className="h-1 w-1 shrink-0 rounded-sm bg-ind-primary-container" />
                   {service.title}
                 </li>
               ))}
-              <li className="text-sm font-medium text-mew-orange">
+              <li className="font-mono text-[10px] font-medium uppercase text-ind-primary-container">
                 + {SERVICES.length - 4} more services below
               </li>
             </ul>
 
             <a
               href="#services"
-              className="mt-5 flex w-full items-center justify-center rounded-lg bg-mew-blue/10 py-2.5 text-sm font-semibold text-mew-blue transition-colors hover:bg-mew-blue hover:text-white dark:bg-mew-blue/20 dark:text-blue-300 dark:hover:bg-mew-blue dark:hover:text-white"
+              className="mt-5 flex w-full items-center justify-center rounded border border-white/15 bg-ind-surf-low py-2.5 font-mono text-[10px] font-bold uppercase tracking-wider text-ind-primary transition-colors hover:bg-white/5"
             >
               View all services ↓
             </a>
@@ -135,9 +127,9 @@ export function Hero() {
 
         <ServiceMarquee />
 
-        <p className="mt-8 flex items-center justify-center gap-2 text-center text-sm text-mew-blue dark:text-blue-400 sm:text-base">
+        <p className="mt-8 flex items-center justify-center gap-2 text-center font-mono text-[10px] uppercase tracking-wider text-ind-primary sm:text-xs">
           <svg
-            className="h-4 w-4 shrink-0 text-mew-orange"
+            className="h-4 w-4 shrink-0 text-ind-primary-container"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"

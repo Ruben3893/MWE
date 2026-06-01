@@ -9,13 +9,13 @@ type WhatsAppButtonProps = {
 };
 
 const baseStyles =
-  'group inline-flex items-center justify-center gap-2 rounded-lg px-5 py-2.5 text-sm font-semibold transition-all duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98]';
+  'group inline-flex items-center justify-center gap-2 rounded px-5 py-2.5 text-sm font-semibold transition-all duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98]';
 
 const variants = {
   primary:
-    'bg-mew-orange text-white shadow-md hover:-translate-y-0.5 hover:bg-[#c94f1f] hover:shadow-glow focus-visible:outline-mew-orange',
+    'bg-ind-primary-container text-white border border-white/20 hover:bg-[#e66000] focus-visible:outline-ind-primary-container',
   secondary:
-    'border-2 border-mew-blue text-mew-blue hover:-translate-y-0.5 hover:bg-mew-blue hover:text-white focus-visible:outline-mew-blue',
+    'border border-white/25 text-ind-on-surface hover:bg-white/5 focus-visible:outline-white bg-transparent',
 };
 
 function WhatsAppIcon({ className = 'h-4 w-4' }: { className?: string }) {
