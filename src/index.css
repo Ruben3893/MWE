@@ -6,31 +6,33 @@
 
 :root {
   --color-bg: #ffffff;
-  --color-on-bg: #0c141a;
+  --color-on-bg: #000000;
   --color-surf: #ffffff;
-  --color-surf-low: #f4f7fb;
-  --color-surf-lowest: #f1f5f9;
-  --color-on-surf: #0c141a;
-  --color-primary: #ff6b00;
-  --color-primary-container: #ff6b00;
+  --color-surf-low: #f9f9f9;
+  --color-surf-lowest: #f5f5f5;
+  --color-on-surf: #000000;
+  --color-primary: #000000;
+  --color-primary-container: #000000;
   --color-on-primary: #ffffff;
-  --color-outline: #ff6b00;
-  --color-outline-variant: #e2e8f0; /* Light border */
+  --color-outline: #000000;
+  --color-outline-variant: #e5e5e5; /* Very clean thin light-gray outline */
+  --text-color-primary: #000000;
 }
 
 .dark,
 :root.dark {
-  --color-bg: #0c141a;
-  --color-on-bg: #dbe3ec;
-  --color-surf: #192127;
-  --color-surf-low: #151c22;
-  --color-surf-lowest: #070f15;
-  --color-on-surf: #dbe3ec;
-  --color-primary: #ffb693;
-  --color-primary-container: #ff6b00;
-  --color-on-primary: #561f00;
-  --color-outline: #a98a7d;
-  --color-outline-variant: #5a4136; /* Dark industrial border */
+  --color-bg: #000000;
+  --color-on-bg: #ffffff;
+  --color-surf: #0a0a0a;
+  --color-surf-low: #121212;
+  --color-surf-lowest: #171717;
+  --color-on-surf: #ffffff;
+  --color-primary: #ffffff;
+  --color-primary-container: #ffffff;
+  --color-on-primary: #000000;
+  --color-outline: #ffffff;
+  --color-outline-variant: #262626; /* Sleek dark-gray industrial border */
+  --text-color-primary: #ffffff;
 }
 
 @layer base {
@@ -69,7 +71,7 @@
 }
 
 @layer components {
-  /* Enforces the modern industrial technical blueprint grid background */
+  /* Technical minimalist grid background */
   .hero-mesh {
     background-color: var(--color-bg);
     background-image:

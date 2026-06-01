@@ -13,7 +13,7 @@ const baseStyles =
 
 const variants = {
   primary:
-    'bg-ind-primary-container text-white border border-white/20 hover:bg-[#e66000] focus-visible:outline-ind-primary-container',
+    'bg-ind-primary-container text-ind-on-primary border border-ind-outline-variant hover:opacity-90 focus-visible:outline-ind-primary-container',
   secondary:
     'border border-ind-outline-variant text-ind-on-surface hover:bg-ind-surf-low focus-visible:outline-ind-primary bg-transparent',
 };
