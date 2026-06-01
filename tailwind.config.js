@@ -5,22 +5,19 @@ export default {
   theme: {
     extend: {
       colors: {
-        ind: {
-          bg: 'var(--color-bg)',
-          surf: 'var(--color-surf)',
-          'surf-low': 'var(--color-surf-low)',
-          'surf-lowest': 'var(--color-surf-lowest)',
-          primary: 'var(--color-primary)',
-          'primary-container': 'var(--color-primary-container)',
-          'on-primary': 'var(--color-on-primary)',
-          'on-surface': 'var(--color-on-surf)',
-          outline: 'var(--color-outline)',
-          'outline-variant': 'var(--color-outline-variant)',
-        },
-        mew: {
-          orange: 'var(--color-primary-container)', // Map to dynamic Safety Orange
-          blue: 'var(--color-primary)',             // Map to dynamic Safety Coral
-        },
+        'ind-bg': 'var(--color-bg)',
+        'ind-surf': 'var(--color-surf)',
+        'ind-surf-low': 'var(--color-surf-low)',
+        'ind-surf-lowest': 'var(--color-surf-lowest)',
+        'ind-primary': 'var(--color-primary)',
+        'ind-primary-container': 'var(--color-primary-container)',
+        'ind-on-primary': 'var(--color-on-primary)',
+        'ind-on-surface': 'var(--color-on-surf)',
+        'ind-outline': 'var(--color-outline)',
+        'ind-outline-variant': 'var(--color-outline-variant)',
+        
+        'mew-orange': 'var(--color-primary-container)', // Map to dynamic Safety Orange
+        'mew-blue': 'var(--color-primary)',             // Map to dynamic Safety Coral
       },
       fontFamily: {
         sans: [
